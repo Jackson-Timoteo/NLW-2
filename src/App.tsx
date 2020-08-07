@@ -5,6 +5,7 @@ import './assets/style/global.css';
 function App() {
   return (
       <Landing />
+      
   );
 }
 
