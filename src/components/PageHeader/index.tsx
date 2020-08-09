@@ -18,7 +18,7 @@ const  PageHeader: React.FunctionComponent<PageHeaderProps> = (props) =>{
                     <img src={backIcon} alt="voltar" />
                 </Link>
 
-                <img src={logoImg} alt="Proffy" />
+                <img src={logoImg} alt="Pro-ffy" />
             </div>
 
             <div className="header-content">
@@ -30,4 +30,3 @@ const  PageHeader: React.FunctionComponent<PageHeaderProps> = (props) =>{
 }
 
 export default PageHeader;
-

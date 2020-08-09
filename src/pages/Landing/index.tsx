@@ -25,17 +25,17 @@ function Landing(){
                 <div className="buttons-container">
                     <Link to="/study" className="study">
                         <img src={studyIcon} alt="estudar"/>
-                        Estudar
+                        Estudar:
                     </Link>
 
                     <Link to="/give-classes" className="give-classes">
                         <img src={giveClassesIcon} alt="Dar aulas"/>
-                        Dar aulas
+                        Dar aulas:
                     </Link>
                 </div>
 
                 <span className="total-connections">
-                    Total de 200 coexões jpa realizadas <img src={purpleHeartIcon} alt="roxo"/>
+                    Total de 200 coxeões jpa realizadas <img src={purpleHeartIcon} alt="roxo"/>
                 </span>
             </div>
         </div>
