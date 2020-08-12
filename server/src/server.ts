@@ -1,9 +1,13 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
 app.use(express.json());
+app.use(routes);
 
+
+app.listen(3333); 
 // GE: Busca ou lista informações
 // POST: Criar alguma nova informação
 //PUT: Atualizaruma informação existente
@@ -13,9 +17,5 @@ app.use(express.json());
 //Route Parametros: Identificar qual recurso eu quero atulizar ou deletar
 // Quer Pametros:  Paginação, filtros, ordenação
 
-app.get('/', (request, response) => {
-    return response.json({ message: 'Hello World'});
-    });
 
 //localhost:33333/users
-app.listen(3333); 
