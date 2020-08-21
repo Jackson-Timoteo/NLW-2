@@ -18,7 +18,8 @@ function Landing(){
 
     useEffect(() => {
         api.get('connections').then(response => {
-        
+          console.log(response);
+          
         })
     }, []);
 
