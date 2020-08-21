@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
@@ -9,8 +9,18 @@ import warningIcon from '../../assets/images/icons/warning.svg';
 
 import './styles.css';
 
-
 function TeacherForm(){
+    const [scheduleItems, setSecheduleItems] = useState ([
+        {  week_day: 0, from: '', to: '' }
+    ]);
+
+function addNewScheduleItem () {
+    setSecheduleItems([
+        ...scheduleItems,
+        {  week_day: 0, from: '', to: '' }
+    ]);
+}
+
     return  (
         <div id="page-teacher-form" className="container">
     <PageHeader 
@@ -54,30 +64,34 @@ function TeacherForm(){
             <fieldset>
                 <legend>
                     Horários disponiveis
-                    <button type="button">
+                    <button type="button" onClick={addNewScheduleItem}>
                         + Novo horário
                      </button>
                 </legend>
 
-                <div className="schedule-item">
-                    <Select 
-                        name="subject" 
-                        label="Matéria"  
-                        options={[
-                            { value: 'Artes', label: 'Artes'},
-                            { value: 'Biologia', label: 'Biologia'},
-                            { value: 'Ciências', label: 'Ciências'},
-                            { value: 'Eduação Física', label: 'Eduação Física'},
-                            { value: 'Manutenção de Computadores e Notebooks', label: 'Manutenção de Computadores e Notebooks'},
-                            { value: 'Programação', label: 'Programação'},
-                            { value: 'Matématica', label: 'Matématica'},
-                            { value: 'Português', label: 'Português'},
-                            { value: 'História', label: 'História'},
-                        ]}
-                    />
-                    <Input name="from" label="Das" type="time" />
-                    <Input name="from" label="Até" type="time" />
-                </div>
+                {scheduleItems.map(scheduleItem => {
+                    return (
+                        <div key={scheduleItem.week_day} className="schedule-item">
+                            <Select 
+                                name="subject" 
+                                label="Matéria"  
+                                options={[
+                                    { value: 'Artes', label: 'Artes'},
+                                    { value: 'Biologia', label: 'Biologia'},
+                                    { value: 'Ciências', label: 'Ciências'},
+                                    { value: 'Eduação Física', label: 'Eduação Física'},
+                                    { value: 'Manutenção de Computadores e Notebooks', label: 'Manutenção de Computadores e Notebooks'},
+                                    { value: 'Programação', label: 'Programação'},
+                                    { value: 'Matématica', label: 'Matématica'},
+                                    { value: 'Português', label: 'Português'},
+                                    { value: 'História', label: 'História'},
+                                ]}
+                            />
+                                <Input name="from" label="Das" type="time" />
+                                <Input name="to" label="Até" type="time" />
+                        </div>
+                    );
+                })}
             </fieldset>
 
             <footer>
