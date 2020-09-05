@@ -18,7 +18,9 @@ function Landing(){
 
     useEffect(() => {
         api.get('connections').then(response => {
-          console.log(response);
+          const { total } = response.data;
+
+          setTotalConnections(total);
           
         })
     }, []);
@@ -46,7 +48,7 @@ function Landing(){
                 </div>
 
                 <span className="total-connections">
-                    Total de 200 coxeões jpa realizadas <img src={purpleHeartIcon} alt="roxo"/>
+                    Total de {totalConnections} conexões já realizadas <img src={purpleHeartIcon} alt="roxo"/>
                 </span>
             </div>
         </div>
